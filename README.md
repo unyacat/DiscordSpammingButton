@@ -13,7 +13,7 @@ PWA 対応で Android ではアプリのような挙動が可能です．
 ## 動かし方
 1. Clone する
     ```console
-    $ git clone https://github.com/unyacat/DiscordSpammingButton.g
+    $ git clone https://github.com/unyacat/DiscordSpammingButton.git
     ```
     ```console
     $ cd DiscordSpammingButton
