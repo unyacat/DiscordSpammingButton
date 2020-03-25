@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/unyacat/DiscordSpammingButton.svg?branch=master)](https://travis-ci.org/unyacat/DiscordSpammingButton)
 
 ## これはなに
-Webhook を利用して Discord にメッセージを送ることができる Web アプリです．  
+Webhook を利用して Discord に定型文を送ることができる Web アプリです．  
 Cloud Firestore を利用しているのでリアルタイムで編集可能な上 Firebase Hosting によりサーバー不要で動きます．  
 PWA 対応で Android ではアプリのような挙動が可能です．
 
