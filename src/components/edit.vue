@@ -108,7 +108,7 @@
                   color="red darken-1"
                   text
                   @click="deleteCard($route.params.id)"
-          >npm ru
+          >
             削除する
           </v-btn>
         </v-card-actions>
