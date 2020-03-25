@@ -1,6 +1,7 @@
 # DiscordSpammingButton
-
 ![repository-open-graph-template_](https://user-images.githubusercontent.com/14951631/77506095-49351c80-6ea8-11ea-8d95-f87beff7f9ef.png)
+
+[![Build Status](https://travis-ci.org/unyacat/DiscordSpammingButton.svg?branch=master)](https://travis-ci.org/unyacat/DiscordSpammingButton)
 
 ## これはなに
 Webhook を利用して Discord にメッセージを送ることができる Web アプリです．  
