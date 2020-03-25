@@ -8,7 +8,7 @@ Cloud Firestore を利用しているのでリアルタイムで編集可能な�
 PWA 対応で Android ではアプリのような挙動が可能です．
 
 ## 動作
-送信すること以外のサンプルは[こちら](dark-pub.firebaseapp.com)
+送信すること以外のサンプルは[こちら](https://dark-pub.web.app/)
 
 ## 動かし方
 1. Clone する
