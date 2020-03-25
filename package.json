@@ -19,6 +19,7 @@
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.11",
     "vue-jsonp": "^0.1.8",
+    "vue-router": "^3.1.5",
     "vuefire": "^2.2.1",
     "vuetify-loader": "^1.4.3"
   },
@@ -30,7 +31,6 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.1.2",
-    "vue-router": "^3.1.5",
     "vue-template-compiler": "^2.6.11",
     "vuetify": "^2.2.12"
   },
@@ -51,5 +51,17 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "![repository-open-graph-template_](https://user-images.githubusercontent.com/14951631/77506095-49351c80-6ea8-11ea-8d95-f87beff7f9ef.png)",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unyacat/DiscordSpammingButton.git"
+  },
+  "author": "unyacat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unyacat/DiscordSpammingButton/issues"
+  },
+  "homepage": "https://github.com/unyacat/DiscordSpammingButton#readme"
 }
