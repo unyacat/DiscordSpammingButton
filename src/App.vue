@@ -71,13 +71,9 @@
 </template>
 
 <script>
-// import sendButton from "./components/sendButton";
 
 export default {
   name: "app",
-  components: {
-    // sendButton
-  },
   data() {
     return {
       drawer: false
