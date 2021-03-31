@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import add from "@/components/add";
 import home from "@/components/home";
 import edit from "@/components/edit"
-
+import settings from '@/components/settings'
 // ルート用のコンポーネントを読み込む
 // import Home from '@/views/Home'
 // import Product from '@/views/Product'
@@ -25,6 +25,10 @@ const router = new VueRouter({
     {
       path: '/edit/:id',
       component: edit
+    },
+    {
+      path: '/settings',
+      component: settings
     }
   ]
 });

@@ -24,6 +24,29 @@
         {{ snackbar.text }}
       </div>
     </v-snackbar>
+    <v-dialog
+      v-model="dialog"
+      persistent
+      max-width="290"
+    >
+      <v-card>
+        <v-card-title class="headline">
+          はじめてですか？
+        </v-card-title>
+        <v-card-text>Discord の Webhook URL を登録してください．登録したら右上から送信先を選択しましょう．</v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="green darken-1"
+            text
+            link
+            href="/settings"
+          >
+            設定する
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -42,8 +65,18 @@ export default {
         isValid: false,
         timeout: 3000,
         text: ""
-      },
+      }
     };
+  },
+  computed: {
+    dialog: function() {
+      if (localStorage.getItem("selectedDiscordUri")){
+        return false
+      }
+      else {
+        return true
+      }
+    }
   },
   created() {
     this.$db.collection("messages").orderBy("timestamp").onSnapshot(querySnapshot => {

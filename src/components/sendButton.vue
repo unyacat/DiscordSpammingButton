@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     sendMessage: function(messageCard) {
-      const webhookURL = process.env.VUE_APP_WEBHOOK_URL;
+      const webhookURL = localStorage.selectedDiscordUri;
 
       axios
         .post(webhookURL, {

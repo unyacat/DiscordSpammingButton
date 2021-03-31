@@ -51,7 +51,7 @@
                     @click.stop="addDatabase"
                     :disabled="!formValid"
             >
-              送信
+              保存
             </v-btn>
           </v-row>
         </v-form>

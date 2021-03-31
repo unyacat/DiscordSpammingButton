@@ -21,30 +21,22 @@
             </v-list-item-content>
           </v-list-item>
 
+          <v-list-item link href="/settings">
+            <v-list-item-action>
+              <v-icon>mdi-cogs</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>設定</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+
           <v-divider />
 
           <v-list-group prepend-icon="mdi-hammer" no-action>
             <template v-slot:activator>
               <v-list-item-title>開発</v-list-item-title>
             </template>
-
-            <v-list-item link href="https://hackmd.io/Fbc7-9EMR62QoAEGdSmHBQ">
-              <v-list-item-content>
-                <v-list-item-title>リリースノート</v-list-item-title>
-              </v-list-item-content>
-              <v-list-item-action>
-                <v-icon>mdi-notebook-outline</v-icon>
-              </v-list-item-action>
-            </v-list-item>
-
-            <v-list-item link href="https://hackmd.io/oiK0albfT6yfXSkxCTbkiQ">
-              <v-list-item-content>
-                <v-list-item-title>ロードマップ</v-list-item-title>
-              </v-list-item-content>
-              <v-list-item-action>
-                <v-icon>mdi-chart-line</v-icon>
-              </v-list-item-action>
-            </v-list-item>
 
             <v-list-item @click.stop="deleteCache">
               <v-list-item-content>
@@ -61,6 +53,18 @@
       <v-app-bar app color="#7289DA" dark>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
         <v-toolbar-title>Discord Spamming Button</v-toolbar-title>
+        <v-spacer />
+        <div style="width: 10em">
+          <v-select
+            :hide-details="true"
+            :items="discordUris"
+            item-text="name"
+            item-value="url"
+            dense
+            :value="selectedDiscordUri"
+            @change="changeDiscordUris"
+          />
+        </div>
       </v-app-bar>
 
       <v-content>
@@ -76,8 +80,17 @@ export default {
   name: "app",
   data() {
     return {
-      drawer: false
+      drawer: false,
+      discordUriIdx: ""
     };
+  },
+  computed: {
+    discordUris: function() {
+      return JSON.parse(localStorage.discordUris || null)
+    },
+    selectedDiscordUri: function() {
+      return localStorage.selectedDiscordUri
+    }
   },
   methods: {
     deleteCache: function() {
@@ -89,6 +102,9 @@ export default {
           });
         });
       });
+    },
+    changeDiscordUris: function(value) {
+      localStorage.selectedDiscordUri = value
     }
   }
 };
@@ -100,4 +116,5 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 </style>
