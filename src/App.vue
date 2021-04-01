@@ -80,8 +80,7 @@ export default {
   name: "app",
   data() {
     return {
-      drawer: false,
-      discordUriIdx: ""
+      drawer: false
     };
   },
   computed: {
