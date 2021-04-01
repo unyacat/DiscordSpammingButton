@@ -82,7 +82,6 @@ export default {
       nameRules: [
         v => !!v || "名前は必ず入力してください．"
       ],
-      contentRules: [v => !!v || "文章は必ず入力してください．"],
       urlRules: [
         v => !!v || "Webhook URL は必ず入力してください．",
         v => (v && this.httpReCheck(v)) || "URL が不正です"
