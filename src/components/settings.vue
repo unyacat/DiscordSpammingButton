@@ -80,18 +80,18 @@ export default {
     return {
       formValid: true,
       nameRules: [
-        v => !!v || "名前は必ず入力してください．"
+        v => (!!v||this.snackbar===true) || "名前は必ず入力してください．",
       ],
       urlRules: [
-        v => !!v || "Webhook URL は必ず入力してください．",
-        v => (v && this.httpReCheck(v)) || "URL が不正です"
+        v => (!!v||this.snackbar===true) || "Webhook URL は必ず入力してください．",
+        v =>  (this.httpReCheck(v)||this.snackbar===true) || "URL が不正です"
       ],
       form: {
         name: "",
         url: ""
       },
       discordUrisTmp: JSON.parse(localStorage.discordUris || null),
-      timeout: 5000,
+      timeout: 3500,
       snackbar: false
     };
   },
