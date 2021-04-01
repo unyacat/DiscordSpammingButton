@@ -49,8 +49,12 @@ export default {
   },
   methods: {
     sendMessage: function(messageCard) {
+      if (!localStorage.getItem("selectedDiscordUri")) {
+        this.$parent.snackbar.isValid = true;
+        this.$parent.snackbar.text = "WebhookのURLを登録・指定してください"
+      }
       const webhookURL = localStorage.selectedDiscordUri;
-
+      
       axios
         .post(webhookURL, {
           content: messageCard.content
