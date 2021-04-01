@@ -39,32 +39,38 @@
     </v-row>
 
     <div v-for="item in discordUrisTmp" v-bind:key="item.url">
-        <v-row>
-            <v-col cols="12">
-                <v-card
-                    elevation="2"
+      <v-row>
+        <v-col cols="12">
+          <v-card
+            elevation="2"
+          >
+            <v-card-text>
+              <v-spacer />
+              <div class="headline font-weight-light"> {{ item.name }}</div>
+              <v-spacer />
+              {{ item.url }}
+              <v-row justify="end">
+                <v-btn
+                    color="error"
+                    class="mr-4"
+                    @click.stop="deleteLocalStorage(item.url)"
                 >
-                    <v-card-text>
-                        <v-spacer />
-                        <div class="headline font-weight-light"> {{ item.name }}</div>
-                        <v-spacer />
-                        {{ item.url }}
-                        <v-row justify="end">
-                            <v-btn
-                                color="error"
-                                class="mr-4"
-                                @click.stop="deleteLocalStorage(item.url)"
-                            >
-                            <v-icon class="pr-6" dark right>mdi-delete</v-icon>
-                            削除
-                            </v-btn>
-                        </v-row>
-                    </v-card-text>
-                </v-card>
-            </v-col>
-        </v-row>
+                <v-icon class="pr-6" dark right>mdi-delete</v-icon>
+                削除
+                </v-btn>
+              </v-row>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
     </div>
-
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout"
+      top
+    >
+      登録が完了しました！トップに戻って右上から送信先を指定してみましょう．
+    </v-snackbar>
   </v-container>
 </template>
 <script>
@@ -85,7 +91,9 @@ export default {
         name: "",
         url: ""
       },
-      discordUrisTmp: JSON.parse(localStorage.discordUris || null)
+      discordUrisTmp: JSON.parse(localStorage.discordUris || null),
+      timeout: 5000,
+      snackbar: false
     };
   },
   methods: {
@@ -107,6 +115,7 @@ export default {
         this.discordUrisTmp = datalist
         this.form.name = ""
         this.form.url = ""
+        this.snackbar = true
       }
     },
     deleteLocalStorage: function(value) {
