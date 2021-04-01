@@ -135,7 +135,7 @@ export default {
       }
     },
     sendMessage: function() {
-      const webhookURL = process.env.VUE_APP_WEBHOOK_URL;
+      const webhookURL = localStorage.selectedDiscordUri;
       axios
         .post(webhookURL, {
           content: this.form.content.replace(/¥n/g, "\n").replace(/\\n/g, "\n"),
