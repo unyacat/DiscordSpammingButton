@@ -84,7 +84,7 @@ export default {
       ],
       urlRules: [
         v => (!!v||this.snackbar===true) || "Webhook URL は必ず入力してください．",
-        v =>  (this.httpReCheck(v)||this.snackbar===true) || "URL が不正です"//false ,||this.
+        v =>  (this.httpReCheck(v)||this.snackbar===true) || "URL が不正です"
       ],
       form: {
         name: "",
