@@ -5,12 +5,12 @@
 ## これはなに
 Webhook を利用して Discord に定型文を送ることができる Web アプリです．  
 Cloud Firestore を利用しているのでリアルタイムで編集可能な上 Firebase Hosting によりサーバー不要で動きます．  
-PWA 対応で Android ではアプリのような挙動が可能です．
+PWA 対応で Android ではアプリのような挙動が可能です．  
 
 ## 動作
-送信すること以外のサンプルは[こちら](https://dark-pub.web.app/)
+サンプルは[こちら](https://dark-pub.web.app/)
 
-## 動かし方
+## How to build
 1. Clone する
     ```console
     $ git clone https://github.com/unyacat/DiscordSpammingButton.git
@@ -20,7 +20,7 @@ PWA 対応で Android ではアプリのような挙動が可能です．
     ```
 1. パッケージインストール
     ```console
-    $ npm install 
+    $ npm install
     ```
 1. 諸設定
     .env_sample をコピーして .env として保存します．

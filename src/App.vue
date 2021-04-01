@@ -89,7 +89,7 @@ export default {
       return JSON.parse(localStorage.discordUris || null)
     },
     selectedDiscordUri: function() {
-      return localStorage.selectedDiscordUri
+      return localStorage.selectedDiscordUri || null
     }
   },
   methods: {

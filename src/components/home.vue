@@ -37,12 +37,19 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="green darken-1"
-            text
-            link
-            href="/settings"
-          >
+              color="green darken-1"
+              text
+              link
+              href="/settings"
+             >
             設定する
+          </v-btn>
+          <v-btn
+            color="blue"
+            text
+            @click="dialog = false"
+          >
+          閉じる
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -65,20 +72,14 @@ export default {
         isValid: false,
         timeout: 3000,
         text: ""
-      }
+      },
+      dialog: false
     };
   },
-  computed: {
-    dialog: function() {
-      if (localStorage.getItem("selectedDiscordUri")){
-        return false
-      }
-      else {
-        return true
-      }
-    }
-  },
   created() {
+    if (localStorage.getItem("selectedDiscordUri") === null) {
+      this.dialog = true
+    }
     this.$db.collection("messages").orderBy("timestamp").onSnapshot(querySnapshot => {
       querySnapshot.docChanges().forEach(change => {
         if (change.type === "added") {
