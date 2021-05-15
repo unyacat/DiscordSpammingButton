@@ -79,6 +79,12 @@ export default {
   created() {
     if (localStorage.getItem("selectedDiscordUri") === null) {
       this.dialog = true
+      let datalist =[]
+      datalist.push({
+        "name": "default",
+        "url": process.env.VUE_APP_DEFAULT_URI
+      })
+      localStorage.discordUris = JSON.stringify(datalist)
     }
     this.$db.collection("messages").orderBy("timestamp").onSnapshot(querySnapshot => {
       querySnapshot.docChanges().forEach(change => {
