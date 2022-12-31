@@ -16,7 +16,7 @@
     "node-sass": "^7.0.0",
     "register-service-worker": "^1.7.2",
     "sass": "^1.32.8",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^13.2.0",
     "vue": "^2.6.12",
     "vue-jsonp": "^0.1.8",
     "vue-router": "^3.5.1",
@@ -24,10 +24,10 @@
     "vuetify-loader": "^1.7.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.12",
-    "@vue/cli-plugin-eslint": "^4.5.12",
-    "@vue/cli-plugin-pwa": "^4.5.12",
-    "@vue/cli-service": "^4.5.12",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-plugin-pwa": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
